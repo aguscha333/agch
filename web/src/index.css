@@ -6,6 +6,11 @@
  * For more information, see: https://tailwindcss.com/docs/installation#include-tailwind-in-your-css
  */
 @import "tailwindcss/base";
+@layer base {
+  html {
+    @apply font-roboto;
+  }
+}
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 /**
