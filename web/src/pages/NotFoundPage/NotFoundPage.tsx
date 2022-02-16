@@ -1,44 +1,23 @@
+import { Link, routes } from '@redwoodjs/router'
+import { MetaTags } from '@redwoodjs/web'
+
 export default () => (
-  <main>
-    <style
-      dangerouslySetInnerHTML={{
-        __html: `
-              html, body {
-                margin: 0;
-              }
-              html * {
-                box-sizing: border-box;
-              }
-              main {
-                display: flex;
-                align-items: center;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-                text-align: center;
-                background-color: #E2E8F0;
-                height: 100vh;
-              }
-              section {
-                background-color: white;
-                border-radius: 0.25rem;
-                width: 32rem;
-                padding: 1rem;
-                margin: 0 auto;
-                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-              }
-              h1 {
-                font-size: 2rem;
-                margin: 0;
-                font-weight: 500;
-                line-height: 1;
-                color: #2D3748;
-              }
-            `,
-      }}
-    />
-    <section>
-      <h1>
-        <span>404 Page Not Found</span>
-      </h1>
+  <main className="bg-gray-100 h-screen ">
+    <MetaTags title="Not Found" description="The page was not found" />
+
+    <div className="container mx-auto py-24">
+      <Link to={routes.home()} className="text-2xl">
+        AgCh
+      </Link>
+    </div>
+    <section className="container mx-auto flex flex-col items-center text-gray-800">
+      <img src="/Error404.svg" alt="" />
+      <h1 className="text-2xl font-light mt-10 mb-7">Page Not Found - 404</h1>
+      <p className="text-lg text-center">
+        This page not found (deleted or never exists).
+        <br />
+        Try a phrase in search box or back to home and start again.
+      </p>
     </section>
   </main>
 )
