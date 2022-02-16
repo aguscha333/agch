@@ -19,9 +19,20 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           <Link to={routes.home()} className="text-2xl">
             AgCh
           </Link>
-          <Link to={routes.about()} className="my-auto ms-5 pointer lead">
-            Bio
-          </Link>
+          <div className="flex">
+            <Link
+              to={routes.about()}
+              className="my-auto ms-5 pointer lead ml-8 focus:underline hover:underline"
+            >
+              Bio
+            </Link>
+            <Link
+              to={routes.contact()}
+              className="my-auto ms-5 pointer lead ml-8 focus:underline hover:underline"
+            >
+              Contact
+            </Link>
+          </div>
         </nav>
       </header>
       <main className="container mx-auto">{children}</main>
