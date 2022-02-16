@@ -9,22 +9,22 @@
 
 import { Router, Route, Set } from '@redwoodjs/router'
 import PostsLayout from 'src/layouts/PostsLayout'
-import MainLayout from './layouts/MainLayout/MainLayout'
+import BlogLayout from 'src/layouts/BlogLayout'
 
 const Routes = () => {
   return (
     <Router>
       <Set wrap={PostsLayout}>
-        <Route path="/posts/new" page={PostNewPostPage} name="newPost" />
-        <Route path="/posts/{id}/edit" page={PostEditPostPage} name="editPost" />
-        <Route path="/posts/{id}" page={PostPostPage} name="post" />
-        <Route path="/posts" page={PostPostsPage} name="posts" />
+        <Route path="/posts/new" page={DevAdminPostNewPostPage} name="newPost" />
+        <Route path="/posts/{id}/edit" page={DevAdminPostEditPostPage} name="editPost" />
+        <Route path="/posts/{id}" page={DevAdminPostPostPage} name="post" />
+        <Route path="/posts" page={DevAdminPostPostsPage} name="posts" />
       </Set>
-      <Set wrap={MainLayout}>
-        <Route path="/contact" page={ContactPage} name="contact" />
-        <Route path="/articles/{id}" page={ArticlePage} name="article" />
-        <Route path="/about" page={AboutPage} name="about" />
-        <Route path="/" page={HomePage} name="home" />
+      <Set wrap={BlogLayout}>
+        <Route path="/contact" page={BlogContactPage} name="contact" />
+        <Route path="/articles/{id}" page={BlogPostPage} name="article" />
+        <Route path="/about" page={BlogAboutPage} name="about" />
+        <Route path="/" page={BlogHomePage} name="home" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
