@@ -8,9 +8,27 @@ generator client {
   binaryTargets = "native"
 }
 
+model User {
+  id                  Int @id @default(autoincrement())
+  name                String?
+  email               String @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+}
+
 model Post {
   id        String      @id @default(uuid())
   title     String
   body      String
+  createdAt DateTime @default(now())
+}
+
+model Contact {
+  id        String @id @default(uuid())
+  name      String
+  email     String
+  message   String
   createdAt DateTime @default(now())
 }

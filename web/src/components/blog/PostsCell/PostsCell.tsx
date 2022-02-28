@@ -28,13 +28,15 @@ export const Success = ({ posts }: CellSuccessProps<PostsQuery>) => {
         return (
           <li
             key={id}
-            className="py-6 border-b-2 border-gray-300 last:border-b-0"
+            className="py-6 border-b-2 border-neutral last:border-b-0"
           >
             <Link to={routes.article({ id })} className="flex">
               <div className="flex flex-col flex-1 ml-4">
-                <span className="mb-6 text-xs text-gray-600">{createdAt}</span>
+                <span className="mb-6 text-xs text-dark-neutral">
+                  {createdAt}
+                </span>
                 <div className="flex justify-between">
-                  <span className="text-lg text-gray-800">{title}</span>
+                  <span className="text-lg text-primary">{title}</span>
                   {/* {tags && <Tags tags={tags} className="ml-4" />} */}
                 </div>
               </div>

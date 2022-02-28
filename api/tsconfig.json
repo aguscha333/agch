@@ -24,11 +24,13 @@
       "./node_modules/@types"
     ],
     "types": ["jest"],
+    "resolveJsonModule": true
   },
   "include": [
     "src",
     "../.redwood/types/includes/all-*",
     "../.redwood/types/includes/api-*",
-    "../types"
+    "../types",
+    "decs.d.ts"
   ]
 }
